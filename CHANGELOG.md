@@ -1,4 +1,25 @@
-## dbt-databricks 1.10.7 (TBD)
+## dbt-databricks 1.10.9 (TBD)
+
+### Features
+- Support column tags for views using `ALTER TABLE`
+
+## dbt-databricks 1.10.8 (August 4, 2025)
+
+### Features
+- Support insert_overwrite incremental strategy for SQL warehouses ([1025](https://github.com/databricks/dbt-databricks/issues/1025))
+
+### Fixes
+- Add fallback logic for known error types for `DESCRIBE TABLE EXTENDED .. AS JSON` for better reliability ([1128](https://github.com/databricks/dbt-databricks/issues/1128))
+- Fix no-op logic for views that is causing some incremental materializations to be skipped ([1122](https://github.com/databricks/dbt-databricks/issues/1122))
+- Fix check constraints keep getting replaced [issue-1109](https://github.com/databricks/dbt-databricks/issues/1109)
+
+### Under the Hood
+- Simplify connection management to align with base adapter. Connections are no longer cached per-thread
+
+## dbt-databricks 1.10.7 (July 31, 2025)
+
+### Fixes
+- Do not use `DESCRIBE TABLE EXTENDED .. AS JSON` for STs when DBR version < 17.1. Do not use at all for MVs (not yet supported)
 
 ## dbt-databricks 1.10.6 (July 30, 2025)
 
